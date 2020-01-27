@@ -1,5 +1,9 @@
 package arrays;
 
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
@@ -13,19 +17,43 @@ Robot[] rob = new Robot[5];
 for (int i = 0; i < rob.length; i++) {
 	rob[i]= new Robot();
 }
+
 		//4. make each robot start at the bottom of the screen, side by side, facing the same direction
+
 	for (int i = 0; i < rob.length; i++) {
 		rob[i].setX(i*200+50);
 		rob[i].setY(500);
-		
+		rob[i].setSpeed(10);
 	}
 	//5. use another for loop to iterate through the array and make each robot move 
 	//   a random amount less than 50.
-
+	boolean finished = false;
+	while(!finished) {
+	for (int k = 0; k < rob.length; k++) {
+		
+		Random hi = new Random();
+		int bye = hi.nextInt(50);
+		
+		rob[k].move(bye);
+		finished = true;
+	}
+}
+	
+	
+	
 	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
 
 	//7. declare that robot the winner and throw it a party!
-
+	for (int j = 0; j < rob.length; j++) {
+		
+	
+	int yeet = rob[j].getY();
+if(rob[j]<yeet) {
+	JOptionPane.showMessageDialog(null, "Robot "+yeet+ " won");
+}
+	
+	
+	}
 	//8. try different races with different amounts of robots.
 
 	//9. make the robots race around a circular track.
