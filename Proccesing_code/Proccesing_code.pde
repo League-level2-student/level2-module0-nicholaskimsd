@@ -11,9 +11,10 @@ size(500, 500);
   bob = new int[width];
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
-int randy = (int) random(height);
-for(int i = 0; i >bob.length; i++){
-bob = new int[randy];
+
+for(int i = 0; i < bob.length; i++){
+  int randy = (int) random(height);
+bob[i] = randy;
 }
   //5. call the noStroke() method
 noStroke();
@@ -31,7 +32,7 @@ fill(255, 151, 0);
   //   the y value will the height variable
   //   the width is 1 (one)
   //   the height is negative the value of the element at the current index of the array
-for(int i = 0; i > bob.length; i++){
+for(int i = 0; i < bob.length; i++){
   rect(i,height,1,-bob[i]);
   
   
@@ -42,13 +43,15 @@ stepSort(bob);
   //10. extract the code that randomizes the array into a method.
 
   //11. call the method you made in step 10 when the mouse is pressed
+  
+if(mousePressed == true){
 extractCode();
+}
 }
 void extractCode(){
   
-for(int i = 0; i >bob.length; i++){
- int randy = (int) random(height);
-bob = new int[randy];
+for(int i = 0; i <bob.length; i++){
+bob[i] = (int) random(height);
 }
 } 
        
